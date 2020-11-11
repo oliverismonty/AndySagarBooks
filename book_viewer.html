@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script type="module">
+			import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
+			import { OrbitControls } from 'https://unpkg.com/three@0.122.0/examples/jsm/controls/OrbitControls.js';
+			import { GLTFLoader } from 'https://unpkg.com/three@0.122.0/examples/jsm/loaders/GLTFLoader.js';
+
+			let camera, scene, renderer;
+			let cameraControls;
+			let effectController;
+			let ambientLight, light;
+
+			let model;
+
+			init();
+			render();
+
+			function init() {
+				
+				const container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				const canvasWidth = window.innerWidth;
+				const canvasHeight = window.innerHeight;
+
+				// CAMERA
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 80000 );
+				camera.position.set( 0.0, 0.0, 4.5 );
+
+				// LIGHTS
+				ambientLight = new THREE.AmbientLight( 0xFFFFFF, 1.2 );
+				light = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
+
+				// RENDERER
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( canvasWidth, canvasHeight );
+				renderer.outputEncoding = THREE.sRGBEncoding;
+				renderer.physicallyCorrectLights = true;
+				renderer.setClearColor(0xFFFFFF, 0);
+				renderer.domElement.setAttribute('style', renderer.domElement.getAttribute('style') + '; outline: none');
+				container.appendChild( renderer.domElement );
+				
+				const controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render );
+				controls.enablePan = false;
+				controls.enableKeys = false;
+				controls.enableZoom = false;
+				controls.maxPolarAngle = 1.7;
+				controls.minPolarAngle = 1.55;
+
+				scene = new THREE.Scene();
+
+				scene.add( ambientLight );
+				scene.add( light );
+				
+				loadModel();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+			}
+
+			function loadModel() {
+				
+				const loader = new GLTFLoader();
+				
+				loader.load("http://localhost:8000/book.glb", function ( gltf ) {
+					
+					var newMaterial = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
+					var textureLoader= new THREE.TextureLoader();
+					var texture = textureLoader.load("http://localhost:8000/book_tex_13.jpg", render);
+					texture.flipY = false;
+					texture.encoding = THREE.sRGBEncoding;
+					newMaterial.map = texture;
+					gltf.scene.material = newMaterial;
+					gltf.scene.traverse( ( child ) => {
+				    	if ( child instanceof THREE.Mesh ) {
+							child.material = newMaterial;
+				  		}
+					})
+					scene.add( gltf.scene );
+					
+				}, undefined, function ( error ) {
+					
+					console.error( error );
+					
+				} );
+			}
+
+		</script>
+	</body>
+</html>
