@@ -68,11 +68,11 @@
 				
 				const loader = new GLTFLoader();
 				
-				loader.load("http://localhost:8000/book.glb", function ( gltf ) {
+				loader.load("models/book.glb", function ( gltf ) {
 					
 					var newMaterial = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
 					var textureLoader= new THREE.TextureLoader();
-					var texture = textureLoader.load("http://localhost:8000/book_tex_13.jpg", render);
+					var texture = textureLoader.load("models/book_tex.jpg", render);
 					texture.flipY = false;
 					texture.encoding = THREE.sRGBEncoding;
 					newMaterial.map = texture;
