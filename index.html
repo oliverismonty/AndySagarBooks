@@ -1,36 +1,127 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Andy Sagar Books</title>
-<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<meta charset="UTF-8">
+	<title>Andy Sagar Books</title>
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+	<script src="javascript/scripts.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+	<link rel="manifest" href="favicons/site.webmanifest">
 </head>
 <body>
-	<div class="top_banner">
-		<div class="banner_padding"></div>
-		<div class="banner_icon">
-			<img src="images/book_icon.png" alt="Books"  height="40px">
-			<p1>BOOKS</p1>
+	<input type="checkbox" id="overlay-input"/>
+	<label for="overlay-input" id="overlay-button"><span id="overlay-button-widget"></span></label>
+	  	<div id="overlay">
+		  	<span id="overlay_contents">
+		  		<a onClick="bookClick()">Books</a></br>
+		  		<a onClick="aboutMeClick()">About Andy</a></br>
+		  		<a onClick="eventsClick()">News</a></br>
+		  		<a onClick="contactMeClick()">Contact</a></br>
+			</span>
 		</div>
-		<div class="banner_icon">
-			<img src="images/face_icon.png" alt="About Me"  height="40px">
-			<p1>ABOUT ME</p1>
+		<div id="underlay"></div>
+	<header>
+		<div id="top_banner">
+			<div class="banner_padding"></div>
+			<div class="banner_icon"  id="book_icon" onClick="bookClick()">
+				<img src="images/book_icon.png" alt="Books" class="zoom" height="45px" style="margin-bottom: -5px; margin-top: 0px; margin-left: -3px;" id="book_image">
+				<p1>BOOKS</p1>
+			</div>
+			<div class="banner_icon" id="face_icon" onClick="aboutMeClick()">
+				<img src="images/face_icon.png" alt="About Andy" class="zoom" height="45px" style="margin-bottom: -5px;" id="face_image">
+				<p1>ABOUT ANDY</p1>
+			</div>
+			<div id="title">
+				<img src="images/title.png" alt="Andy Sagar Books"  height="85px" id="title_image">
+			</div>
+			<div class="banner_icon" id="teacup_icon" onClick="eventsClick()">
+				<img src="images/teacup_icon.png" alt="Events" class="zoom" height="60px" style="margin-bottom: -15px; margin-top: -5px;" id="teacup_image">
+				<div>NEWS</div>
+			</div>
+			<div class="banner_icon" id="post_icon" onClick="contactMeClick()">
+				<img src="images/post_icon.png" alt="Contact Me" class="zoom" height="50px" style="margin-bottom: -10px; margin-top: 0px;" id="post_image">
+				<p1>CONTACT ME</p1>
+			</div>
+			<div class="banner_padding"></div>
 		</div>
-		<div class="title">
-			<img src="images/title.png" alt="Andy Sagar Books"  height="85px">
+	</header>
+	<main>
+		<div id="middle_contents">
+			<div class="contents" id="about_contents">
+				<div class="profile">
+					<img src="images/andy.jpg" alt="Andy Sagar Profile" height="100%">		
+				</div>
+				<div class="copy" id="about_copy">
+					<div class="copy_title" id="about_copy_title">
+						<h1>About Andy</h1>
+					</div>
+					<p1>
+						<br></br> Hi, I'm Andy Sagar. How are you? <br></br> I write stories, mostly for children (and for grown-ups who feel like they could use an adventure now and again). My favourite month is October and my favourite animal is the tortoise. I was raised in Yorkshire but now live between London, where I write, and Cambridge, where I study how law relates to witchcraft. <br></br> When I was in school, I wanted to be an author, or a baker, or an octopus expert, or a fortune teller. At least one of these ambitions has now been fulfilled (I’m still waiting to hear back on my application to fortune teller school). <br></br> To reach me, please see my <a onClick="contactMeClick()">Contact Me</a> page.
+					</p1>
+				</div>
+			</div>
+			<div class="contents" id="books_contents">
+				<div id="book_model">
+					<iframe src="./book_viewer.html" title="description" frameBorder="0" height="100%" scrolling="no"></iframe>
+				</div>
+				<div class="copy" id="books_copy">
+					<h2><i>'Yesterday Crumb and the Storm in a Teacup'</i> </br> Coming 2022!</h2> <br></br>
+					<p1>When a girl named Yesterday discovers a magical, walking teashop run by the flamboyant tea witch Miss Dumpling, she believes her dreams of adventure have finally come true. But dark forces linger in the shadows, and she soon must race against time to defeat an ancient, evil force, or the teashop and its wondrous magic will be snatched away forever...</p1>
+				</div>
+			</div>
+			<div class="contents" id="events_contents">
+				<div class="copy" id="events_copy">
+					<div class="copy_title" id="events_copy_title" hidden>	
+						<h1>Books</h1>
+					</div>
+					<h2>
+						<a class="twitter-timeline" data-width="550" data-height="550" href="https://twitter.com/andysagarbooks?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</h2>
+				</div>
+			</div>
+			<div class="contents" id="contact_me_contents">
+				<div class="copy" id="contact_me_copy">
+					<div class="copy_title" id="contact_me_copy_title">
+						<h1>Contact Me</h1>
+					</div>
+					<p1>
+						<table>
+						  <tr>
+							<td class="contact_edit"><a target="_blank" href="https://www.instagram.com/andysagarbooks/"><img src="images/insta_icon.png" alt="Instagram" height="100%" class="contact_icon"></a></td>
+							<td class="contact_edit"><a target="_blank" href="https://twitter.com/andysagarbooks"><img src="images/twitter_icon.png" alt="Twitter" height="100%" class="contact_icon"></a></td> 
+						  </tr>
+						  <tr>
+						  	<td class="contact_text"><a target="_blank" href="https://www.instagram.com/andysagarbooks/">@andysagarbooks</a></td>
+							<td class="contact_text"><a target="_blank" href="https://twitter.com/andysagarbooks">@andysagarbooks</a></td> 
+						  </tr>
+						  <tr>
+							<td colspan="2" class="contact_edit"><a target="_blank" href="https://mailhide.io/e/kYQ3nNp3"><img src="images/mail_icon.png" alt="Email" height="100%" class="contact_icon"></a></td>
+						  </tr>
+						  <tr>
+							<td colspan="2" class="contact_text"><a target="_blank" href="https://mailhide.io/e/kYQ3nNp3">Email Me</a></td>
+						  </tr>
+						  <tr>
+							<td><div class="subtitle"><a target="_blank" href="https://www.hachettechildrens.co.uk/contributor/andy-sagar/"><h3>Publisher</h3></a></div></td>
+							<td><div class="subtitle"><a target="_blank" href="https://www.unitedagents.co.uk/andy-sagar"><h3>Agent</h3></a></div></td> 
+						  </tr>
+						  <tr>
+							<td><a target="_blank" href="https://www.hachettechildrens.co.uk/contributor/andy-sagar/"><img src="images/hachette_logo.png" alt="Hachette Children's Group" height="45px" id="publisher_logo"></a></td>
+							<td><a target="_blank" href="https://www.unitedagents.co.uk/andy-sagar"><img src="images/united_agents_logo.svg" alt="United Agents" height="45px" id="agent_logo"></a></td> 
+						  </tr>
+						</table>
+					</p1>
+				</div>
+			</div>
 		</div>
-		<div class="banner_icon">
-			<img src="images/teacup_icon.png" alt="Events" height="40px">
-			<div margin="10px">EVENTS</div>
-		</div>
-		<div class="banner_icon">
-			<img src="images/post_icon.png" alt="Contact Me"  height="40px">
-			<p1>CONTACT ME</p1>
-		</div>
-		<div class="banner_padding"></div>
-	</div>
-	<div class="middle_contents"></div>
-	<div class="bottom_banner">© COPYRIGHT ANDY SAGAR 2020</div>
+	</main>
+	<footer>
+		<section id="bottom_banner">
+			© ANDY SAGAR & OLIVER HULME ALL RIGHTS RESERVED
+		</section>
+	</footer>
 </body>
 </html>
