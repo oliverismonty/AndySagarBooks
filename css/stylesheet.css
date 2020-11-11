@@ -313,7 +313,7 @@ td {
 
 /* Tablet */
 
-@media screen and (max-width: 810px) {
+@media (max-width: 810px) {
 	
 	td {
 		padding-top: 5px;
@@ -432,7 +432,7 @@ td {
 
 /* Phone */
 
-@media screen and (max-width: 550px) {
+@media (max-width: 550px) {
 	
 	.banner_icon {
 		visibility: hidden;
