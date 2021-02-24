@@ -1,13 +1,12 @@
 <!doctype html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Andy Sagar Books</title>
 	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
 	<script src="javascript/scripts.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
@@ -16,15 +15,15 @@
 <body>
 	<input type="checkbox" id="overlay-input"/>
 	<label for="overlay-input" id="overlay-button"><span id="overlay-button-widget"></span></label>
-	  	<div id="overlay">
+	<div id="overlay">
 		  	<span id="overlay_contents">
 		  		<a onClick="bookClick()">Books</a></br>
 		  		<a onClick="aboutMeClick()">About Andy</a></br>
-		  		<a onClick="eventsClick()">News</a></br>
+		  		<a onClick="eventsClick()">Simple Sorceries</a></br>
 		  		<a onClick="contactMeClick()">Contact</a></br>
 			</span>
 		</div>
-		<div id="underlay"></div>
+	<div id="underlay"></div>
 	<header>
 		<div id="top_banner">
 			<div class="banner_padding"></div>
@@ -41,7 +40,7 @@
 			</div>
 			<div class="banner_icon" id="teacup_icon" onClick="eventsClick()">
 				<img src="images/teacup_icon.png" alt="Events" class="zoom" height="60px" style="margin-bottom: -15px; margin-top: -5px;" id="teacup_image">
-				<div>NEWS</div>
+				<div>POETRY</div>
 			</div>
 			<div class="banner_icon" id="post_icon" onClick="contactMeClick()">
 				<img src="images/post_icon.png" alt="Contact Me" class="zoom" height="50px" style="margin-bottom: -10px; margin-top: 0px;" id="post_image">
@@ -66,52 +65,198 @@
 				</div>
 			</div>
 			<div class="contents" id="books_contents">
+				<div class="copy" id="books_copy">
 				<div id="book_model">
 					<iframe src="./book_viewer.html" title="description" frameBorder="0" height="100%" scrolling="no"></iframe>
 				</div>
-				<div class="copy" id="books_copy">
-					<h2><i>'Yesterday Crumb and the Storm in a Teacup'</i> </br> Coming 2022!</h2> <br></br>
-					<p1>When a girl named Yesterday discovers a magical, walking teashop run by the flamboyant tea witch Miss Dumpling, she believes her dreams of adventure have finally come true. But dark forces linger in the shadows, and she soon must race against time to defeat an ancient, evil force, or the teashop and its wondrous magic will be snatched away forever...</p1>
+					<h2><i>'Yesterday Crumb and the Storm in a Teacup'</i> </br> Coming 2022!</h2> <br>
+					<p1>When a girl named Yesterday discovers a magical, walking teashop run by the flamboyant tea witch Miss Dumpling, she believes her dreams of adventure have finally come true. But dark forces linger in the shadows, and she soon must race against time to defeat an ancient, evil force, or the teashop and its wondrous magic will be snatched away forever...</p1> <br></br>
 				</div>
 			</div>
 			<div class="contents" id="events_contents">
 				<div class="copy" id="events_copy">
-					<div class="copy_title" id="events_copy_title" hidden>	
-						<h1>Books</h1>
+					<div class="copy_title" id="events_copy_title">	
+						<h1>Simple Sorceries</h1>
 					</div>
+					<section class="gallery">
+						<div class="row">
+							<ul id="item011">
+								<li class="gallery_item">
+									<a href="#01" id="item01" onClick="openItem('port01')">
+										<img src="images/dragonfruit.png" alt="">
+										<p class="gallery_caption">Strawberries and Dragonfruit</p>
+									</a>
+								</li>
+								<li class="gallery_item">
+									<a id="item02" style="opacity: 0.25;">
+										<img src="images/moth.png" alt="">
+										<p class="gallery_caption">Coming Soon</p>
+									</a>
+								</li>
+								<li class="gallery_item" >
+									<a id="item03" style="opacity: 0.25;">
+										<img src="images/toadstool.png" alt="">
+										<p class="gallery_caption">Coming Soon</p>
+									</a>
+								</li>
+								<li class="gallery_item">
+									<a id="item04" style="opacity: 0.25;">
+										<img src="images/compass.png" alt="">
+										<p class="gallery_caption">Coming Soon</p>
+									</a>
+								</li>
+							</ul>
+						</div> 
+					</section> 
+<!-- twitter 
 					<h2>
 						<a class="twitter-timeline" data-width="550" data-height="550" href="https://twitter.com/andysagarbooks?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</h2>
+ -->
+					<div id="port01" class="port">
+						<a class="close" onClick="closeClick()"></a>
+						<div class="row">
+							<img src="images/dragonfruit.png" alt="" class="icon">
+							<div class="description">
+								<h1 class="description_header"><i>Strawberries and Dragonfruit</i></h1>
+								<p class="description_content">
+									<br>
+									There is an art </br>
+									To turning wasps into bumblebees, </br>
+									Taking vinegar-thoughts and stirring them </br>
+									Into love-sweet honey. </br>
+									</br>
+									It is an art </br>
+									I have struggled to learn. </br>
+									</br>
+									I suspect it consists </br>
+									Of tea-stained paper </br>
+									Of neon lights in sprays of rain, </br>
+									Of strawberries and dragonfruit. </br>
+									</br>
+									A river flows without thinking -</br>
+									Perhaps I can, too. </br>
+									</br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="port02" class="port">
+						<a class="close" onClick="closeClick()"></a>
+						<div class="row">
+							<img src="images/moth.png" alt="" class="icon">
+							<div class="description">
+								<h1 class="description_header"><i>Strawberries and Dragonfruit</i></h1>
+								<p class="description_content">
+									<br>
+									There is an art </br>
+									To turning wasps into bumblebees, </br>
+									Taking vinegar-thoughts and stirring them </br>
+									Into love-sweet honey. </br>
+									</br>
+									It is an art </br>
+									I have struggled to learn. </br>
+									</br>
+									I suspect it consists </br>
+									Of tea-stained paper </br>
+									Of neon lights in sprays of rain, </br>
+									Of strawberries and dragonfruit. </br>
+									</br>
+									A river flows without thinking -</br>
+									Perhaps I can, too. </br>
+									</br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="port03" class="port">
+						<a class="close" onClick="closeClick()"></a>
+						<div class="row">
+							<img src="images/toadstool.png" alt="" class="icon">
+							<div class="description">
+								<h1 class="description_header"><i>Strawberries and Dragonfruit</i></h1>
+								<p class="description_content">
+									<br>
+									There is an art </br>
+									To turning wasps into bumblebees, </br>
+									Taking vinegar-thoughts and stirring them </br>
+									Into love-sweet honey. </br>
+									</br>
+									It is an art </br>
+									I have struggled to learn. </br>
+									</br>
+									I suspect it consists </br>
+									Of tea-stained paper </br>
+									Of neon lights in sprays of rain, </br>
+									Of strawberries and dragonfruit. </br>
+									</br>
+									A river flows without thinking -</br>
+									Perhaps I can, too. </br>
+									</br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="port04" class="port">
+						<a class="close" onClick="closeClick()"></a>
+						<div class="row">
+							<img src="images/compass.png" alt="" class="icon">
+							<div class="description">
+								<h1 class="description_header"><i>Strawberries and Dragonfruit</i></h1>
+								<p class="description_content">
+									<br>
+									There is an art </br>
+									To turning wasps into bumblebees, </br>
+									Taking vinegar-thoughts and stirring them </br>
+									Into love-sweet honey. </br>
+									</br>
+									It is an art </br>
+									I have struggled to learn. </br>
+									</br>
+									I suspect it consists </br>
+									Of tea-stained paper </br>
+									Of neon lights in sprays of rain, </br>
+									Of strawberries and dragonfruit. </br>
+									</br>
+									A river flows without thinking -</br>
+									Perhaps I can, too. </br>
+									</br>
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="contents" id="contact_me_contents">
 				<div class="copy" id="contact_me_copy">
-					<div class="copy_title" id="contact_me_copy_title">
+					<div class="copy_title" id="contact_me_copy_title" style="margin-bottom: 40px;">
 						<h1>Contact Me</h1>
 					</div>
 					<p1>
-						<table>
+						<table style="overflow-y: scroll;">
 						  <tr>
-							<td class="contact_edit"><a target="_blank" href="https://www.instagram.com/andysagarbooks/"><img src="images/insta_icon.png" alt="Instagram" height="100%" class="contact_icon"></a></td>
-							<td class="contact_edit"><a target="_blank" href="https://twitter.com/andysagarbooks"><img src="images/twitter_icon.png" alt="Twitter" height="100%" class="contact_icon"></a></td> 
+							<td class="contact_edit"><a target="_blank" href="https://twitter.com/andysagarbooks"><img src="images/twitter_icon.png" alt="Twitter" height="145%" class="contact_icon"></a></td> 
+							<td class="contact_edit"><a target="_blank" href="https://mailhide.io/e/kYQ3nNp3"><img src="images/mail_icon.png" alt="Email" height="145%" class="contact_icon"></a></td>
+							<td class="contact_edit"><a target="_blank" href="https://www.instagram.com/andysagarbooks/"><img src="images/insta_icon.png" alt="Instagram" height="140%" class="contact_icon"></a></td>
 						  </tr>
 						  <tr>
+							<td class="contact_text"><a target="_blank" href="https://twitter.com/andysagarbooks">@andysagarbooks</a></td>
+							<td class="contact_text"><a target="_blank" href="https://mailhide.io/e/kYQ3nNp3">Email Me!</a></td>
 						  	<td class="contact_text"><a target="_blank" href="https://www.instagram.com/andysagarbooks/">@andysagarbooks</a></td>
-							<td class="contact_text"><a target="_blank" href="https://twitter.com/andysagarbooks">@andysagarbooks</a></td> 
 						  </tr>
-						  <tr>
-							<td colspan="2" class="contact_edit"><a target="_blank" href="https://mailhide.io/e/kYQ3nNp3"><img src="images/mail_icon.png" alt="Email" height="100%" class="contact_icon"></a></td>
-						  </tr>
-						  <tr>
-							<td colspan="2" class="contact_text"><a target="_blank" href="https://mailhide.io/e/kYQ3nNp3">Email Me</a></td>
-						  </tr>
+						</table>
+							<!--
 						  <tr>
 							<td><div class="subtitle"><a target="_blank" href="https://www.hachettechildrens.co.uk/contributor/andy-sagar/"><h3>Publisher</h3></a></div></td>
 							<td><div class="subtitle"><a target="_blank" href="https://www.unitedagents.co.uk/andy-sagar"><h3>Agent</h3></a></div></td> 
 						  </tr>
+							-->
+						<table>
 						  <tr>
 							<td><a target="_blank" href="https://www.hachettechildrens.co.uk/contributor/andy-sagar/"><img src="images/hachette_logo.png" alt="Hachette Children's Group" height="45px" id="publisher_logo"></a></td>
-							<td><a target="_blank" href="https://www.unitedagents.co.uk/andy-sagar"><img src="images/united_agents_logo.svg" alt="United Agents" height="45px" id="agent_logo"></a></td> 
+						  </tr>
+						  <tr>
+							<td><a target="_blank" href="https://www.unitedagents.co.uk/andy-sagar"><img src="images/united_agents_logo.svg" alt="United Agents" height="45px" id="agent_logo" style="margin-top: 30px;"></a></td> 
 						  </tr>
 						</table>
 					</p1>
